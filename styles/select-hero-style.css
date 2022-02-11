@@ -1,0 +1,22 @@
+h2 {
+    color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 50px;
+    margin: 0 auto;
+    width: 316px;
+    top: 10vh;
+    position: relative;
+}
+h3 {
+    color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 100px;
+    cursor: pointer;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+}
+h3:hover {
+    transform: scale(1.3);
+}

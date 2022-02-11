@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    min-width: 100vw;
+    max-height: 100vh;
+    background-image: url(../img/Zhenya/firstAct/roof.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.text-box {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    bottom: 0vh;
+    height: 15vh;
+    background-color: rgba(0, 0, 0, 0.692);
+    border-top: 5px solid rgb(15, 152, 161);
+}
+p {
+    color: rgb(221, 221, 0);
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+h2 {
+    padding: 10px;
+    z-index: 1;
+    bottom: 15.5vh;
+    position: absolute;
+    font-size: 40px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(189, 0, 0);
+    font-weight: 500;
+    display: none;
+}
+button {
+    color: rgb(221, 221, 0);
+    background: none;
+    border: 0;
+    z-index: 1;
+    bottom: 15.7vh;
+    position: absolute;
+    right: 0%;
+    font-size: 75px;
+    padding-right: 20px;
+    cursor: pointer;
+}
