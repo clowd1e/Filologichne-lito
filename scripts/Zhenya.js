@@ -18,49 +18,41 @@ const phrasesFirstAct = [
     '- Сейчас мне 24 года, я веду затворнический образ жизни, избегая любых связей и контактов с людьми, единственное что меня держало хоть как-то это последнее время это работа фрилансером в интернете. Деньги были небольшими, но на гречку с сосиской по праздникам и оплату коммунальных услуг хватало.',
     '- Мне надоела такая жизнь, надоела вся эта серость вокруг, злые люди, очущение будто цепи безысходности тянут меня на дно. Но вот незадача - дно давно закончилось. Я устал…',
     '- Прощай жестокий мир, просите меня дедушка и бабушка, я не смог оправдать ваших надежд…'
-]
-
+];
 let act = 0
+// This variable I use for check level ...
+let level = 0;
 const nextSlide = (text, size, name, color, displayName, display) => {
-    pText.innerHTML = text
-    character.style.display = displayName
-    character.innerHTML = name
-    character.style.color = color
-    pText.style.fontSize = size
-    textBox.style.display = display
-}
-    button.addEventListener('click', () => {
-    textBox.style.display = 'block'
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[0], '25px', persons[0], colors[0], 'none', 'display')
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[1])
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[2], '20px')
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[3], '25px')
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[4])
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[5])
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[6], '20px')
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[7], '25px')
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[8])
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[9])
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[10], '20px')
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[11], '25px')
-    button.addEventListener('click', () => {
-    nextSlide(phrasesFirstAct[12])
-    button.addEventListener('click', () => {
-    textBox.style.display = 'none'
-    // анимация падения 
-    // скорая 
-    // звуки сирены
-    act++
-    })})})})})})})})})})})})})})}) 
+    pText.innerHTML = text;
+    character.style.display = displayName;
+    character.innerHTML = name;
+    character.style.color = color;
+    pText.style.fontSize = size;
+    textBox.style.display = "block";
+};
+button.addEventListener('click', () => {
+    level+=1;
+    
+    if(!level) {
+        textBox.display = 'block';
+    } else if(level === 1) {
+        nextSlide(phrasesFirstAct[level-1], '25px', persons[0], colors[0], 'none', 'display');
+    } else if(level === 3) {
+        nextSlide(phrasesFirstAct[level-1], '20px');
+    } else if(level === 4) {
+        nextSlide(phrasesFirstAct[level-1], '25px');
+    } else if(level === 7) {
+        nextSlide(phrasesFirstAct[level-1], '20px');
+    } else if(level === 8) {
+        nextSlide(phrasesFirstAct[level-1], '25px');
+    } else if(level === 11) {
+        nextSlide(phrasesFirstAct[level-1], '20px');
+    } else if(level === 12) {
+        nextSlide(phrasesFirstAct[level-1], '25px');
+    } else if(level === 14) {
+        // Finish 
+        textBox.style.display = 'none'
+    } else {
+        nextSlide(phrasesFirstAct[level-1]);
+    }
+});
