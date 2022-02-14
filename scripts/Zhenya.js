@@ -52,7 +52,5 @@ button.addEventListener('click', () => {
     } else if(level === 14) {
         // Finish 
         textBox.style.display = 'none'
-    } else {
-        nextSlide(phrasesFirstAct[level-1]);
     }
 });
