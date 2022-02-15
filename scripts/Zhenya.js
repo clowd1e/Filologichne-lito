@@ -22,35 +22,38 @@ const phrasesFirstAct = [
 let act = 0
 // This variable I use for check level ...
 let level = 0;
+let i = 2
 const nextSlide = (text, size, name, color, displayName, display) => {
-    pText.innerHTML = text;
-    character.style.display = displayName;
-    character.innerHTML = name;
-    character.style.color = color;
-    pText.style.fontSize = size;
-    textBox.style.display = "block";
+    pText.innerHTML = text
+    character.style.display = displayName
+    character.innerHTML = name
+    character.style.color = color
+    pText.style.fontSize = size
+    textBox.style.display = display
 };
-button.addEventListener('click', () => {
-    level+=1;
-    
-    if(!level) {
-        textBox.display = 'block';
-    } else if(level === 1) {
-        nextSlide(phrasesFirstAct[level-1], '25px', persons[0], colors[0], 'none', 'display');
-    } else if(level === 3) {
-        nextSlide(phrasesFirstAct[level-1], '20px');
-    } else if(level === 4) {
-        nextSlide(phrasesFirstAct[level-1], '25px');
-    } else if(level === 7) {
-        nextSlide(phrasesFirstAct[level-1], '20px');
-    } else if(level === 8) {
-        nextSlide(phrasesFirstAct[level-1], '25px');
-    } else if(level === 11) {
-        nextSlide(phrasesFirstAct[level-1], '20px');
-    } else if(level === 12) {
-        nextSlide(phrasesFirstAct[level-1], '25px');
-    } else if(level === 14) {
-        // Finish 
-        textBox.style.display = 'none'
-    }
-});
+if(act === 0) {
+    button.addEventListener('click', () => {
+        level++
+        if(level === 1) {
+            textBox.style.display = 'block'
+        } else if (level === 4) {
+            nextSlide(phrasesFirstAct[level-2], '20px');
+            i++
+        } else if (level === 8) {
+            nextSlide(phrasesFirstAct[level-2], '20px');
+            i++
+        } else if (level === 12) {
+            nextSlide(phrasesFirstAct[level-2], '20px');
+            i++
+        } else if(level === 15) {
+            textBox.style.display = 'none'
+            act+=1
+            level = 0
+            i = 2
+        }
+        else if (level === i) {
+            nextSlide(phrasesFirstAct[level-2], '25px', persons[-1], colors[-1], 'none', 'display');
+            i++
+        }
+    })
+}
