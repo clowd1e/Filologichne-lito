@@ -3,7 +3,7 @@ const character = document.querySelector('h2')
 const textBox = document.querySelector('.text-box')
 const button = document.querySelector('.next')
 const colors = ['white', 'blue']
-const persons = ['Женя', 'Незнакомец']
+const persons = ['Женя', 'Незнакомец', 'Незнакомец 2', 'Незнакомец 3']
 const phrasesFirstAct = [
     '- Однажды меня спросили: "Кем среди трёх вариантов по вашему мнению является человек?"',
     '- 1. Самым величественным существом; 2. Самым несчастным существом; 3. Самым подлым существом',
@@ -19,9 +19,13 @@ const phrasesFirstAct = [
     '- Мне надоела такая жизнь, надоела вся эта серость вокруг, злые люди, очущение будто цепи безысходности тянут меня на дно. Но вот незадача - дно давно закончилось. Я устал…',
     '- Прощай жестокий мир, просите меня дедушка и бабушка, я не смог оправдать ваших надежд…'
 ];
+const phrasesSecondActStranger = [
+    '- Вы живы? Вы слышите меня?',
+    '- Тут мужчина лет 30-ти.',
+    '- Вот ведь беда, он не выживет...'
+]
 let act = 0
-// This variable I use for check level ...
-let level = 0;
+let level = 0
 let i = 2
 const nextSlide = (text, size, name, color, displayName, display) => {
     pText.innerHTML = text
@@ -37,23 +41,45 @@ if(act === 0) {
         if(level === 1) {
             textBox.style.display = 'block'
         } else if (level === 4) {
-            nextSlide(phrasesFirstAct[level-2], '20px');
+            nextSlide(phrasesFirstAct[level-2], '20px')
             i++
         } else if (level === 8) {
-            nextSlide(phrasesFirstAct[level-2], '20px');
+            nextSlide(phrasesFirstAct[level-2], '20px')
             i++
         } else if (level === 12) {
-            nextSlide(phrasesFirstAct[level-2], '20px');
+            nextSlide(phrasesFirstAct[level-2], '20px')
             i++
         } else if(level === 15) {
             textBox.style.display = 'none'
-            act+=1
-            level = 0
-            i = 2
-        }
-        else if (level === i) {
-            nextSlide(phrasesFirstAct[level-2], '25px', persons[-1], colors[-1], 'none', 'display');
+        } else if (level === i) {
+            nextSlide(phrasesFirstAct[level-2], '25px', persons[-1], colors[-1], 'none', 'display')
             i++
         }
     })
 }
+
+
+// button.addEventListener('click', () => {
+//     level+=1 ;
+    
+//     if(!level) {
+//         textBox.display = 'block';
+//     } else if(level === 1) {
+//         nextSlide(phrasesFirstAct[level-1], '25px', persons[0], colors[0], 'none', 'display');
+//     } else if(level === 3) {
+//         nextSlide(phrasesFirstAct[level-1], '20px');
+//     } else if(level === 4) {
+//         nextSlide(phrasesFirstAct[level-1], '25px');
+//     } else if(level === 7) {
+//         nextSlide(phrasesFirstAct[level-1], '20px');
+//     } else if(level === 8) {
+//         nextSlide(phrasesFirstAct[level-1], '25px');
+//     } else if(level === 11) {
+//         nextSlide(phrasesFirstAct[level-1], '20px');
+//     } else if(level === 12) {
+//         nextSlide(phrasesFirstAct[level-1], '25px');
+//     } else if(level === 14) {
+//         // Finish 
+//         textBox.style.display = 'none'
+//     }
+// });
