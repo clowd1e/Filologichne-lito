@@ -1,7 +1,9 @@
 const pText = document.querySelector('p')
 const character = document.querySelector('h2')
 const textBox = document.querySelector('.text-box')
-const button = document.querySelector('.next')
+const buttonNext = document.querySelector('.next')
+const buttonPrevious = document.querySelector('.previous')
+
 const colors = ['white', 'blue']
 const persons = ['Женя', 'Незнакомец', 'Незнакомец 2', 'Незнакомец 3']
 const phrasesFirstAct = [
@@ -36,7 +38,7 @@ const nextSlide = (text, size, name, color, displayName, display) => {
     textBox.style.display = display
 };
 if(act === 0) {
-    button.addEventListener('click', () => {
+    buttonNext.addEventListener('click', () => {
         level++
         if(level === 1) {
             textBox.style.display = 'block'
@@ -56,10 +58,23 @@ if(act === 0) {
             i++
         }
     })
+    buttonPrevious.addEventListener('click', () => {
+        console.log(level)
+        console.log(i)
+        if (level === 2 || level === 1) {
+            textBox.style.display = 'none'
+            level = 0
+            i = 2
+        } else if(level === i - 1) {
+            nextSlide(phrasesFirstAct[level-3], '25px')
+            i--
+            level--
+        }
+    })
 }
 
 
-// button.addEventListener('click', () => {
+// buttonNext.addEventListener('click', () => {
 //     level+=1 ;
     
 //     if(!level) {
