@@ -3,6 +3,7 @@ const character = document.querySelector('h2')
 const textBox = document.querySelector('.text-box')
 const buttonNext = document.querySelector('.next')
 const buttonPrevious = document.querySelector('.previous')
+const background = document.querySelector('body')
 
 const colors = ['white', 'blue']
 const persons = ['Женя', 'Незнакомец', 'Незнакомец 2', 'Незнакомец 3']
@@ -29,6 +30,7 @@ const phrasesSecondActStranger = [
 let act = 0
 let level = 0
 let i = 2
+
 const nextSlide = (text, size, name, color, displayName, display) => {
     pText.innerHTML = text
     character.style.display = displayName
@@ -36,7 +38,9 @@ const nextSlide = (text, size, name, color, displayName, display) => {
     character.style.color = color
     pText.style.fontSize = size
     textBox.style.display = display
-};
+}
+
+let act = 0
 if(act === 0) {
     buttonNext.addEventListener('click', () => {
         level++
@@ -53,6 +57,8 @@ if(act === 0) {
             i++
         } else if(level === 15) {
             textBox.style.display = 'none'
+            background.style.backgroundImage = 'url(../img/Zhenya/test.jpeg)'
+            act++
         } else if (level === i) {
             nextSlide(phrasesFirstAct[level-2], '25px', persons[-1], colors[-1], 'none', 'display')
             i++
@@ -86,6 +92,14 @@ if(act === 0) {
             nextSlide(phrasesFirstAct[level-3], '25px')
             i--
             level--
+        }
+    })
+} else if(act === 1) {
+    level = 0
+    buttonNext.addEventListener('click', () => {
+        level++
+        if(level === 1) {
+            textBox.style.display = 'block'
         }
     })
 }
