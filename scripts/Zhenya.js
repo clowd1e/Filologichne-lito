@@ -56,15 +56,32 @@ if(act === 0) {
         } else if (level === i) {
             nextSlide(phrasesFirstAct[level-2], '25px', persons[-1], colors[-1], 'none', 'display')
             i++
+        } else if (level === 16){
+            level--
         }
     })
     buttonPrevious.addEventListener('click', () => {
-        console.log(level)
-        console.log(i)
         if (level === 2 || level === 1) {
             textBox.style.display = 'none'
             level = 0
             i = 2
+        } else if (level === 5) {
+            nextSlide(phrasesFirstAct[level-3], '20px')
+            i--
+            level--
+        } else if (level === 9) {
+            nextSlide(phrasesFirstAct[level-3], '20px')
+            i--
+            level--
+        } else if (level === 13) {
+            nextSlide(phrasesFirstAct[level-3], '20px')
+            i--
+            level--
+        } else if (level === 15) {
+            textBox.style.display = 'block'
+            nextSlide(phrasesFirstAct[level-3], '25px')
+            i--
+            level--
         } else if(level === i - 1) {
             nextSlide(phrasesFirstAct[level-3], '25px')
             i--
