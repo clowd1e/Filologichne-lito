@@ -44,10 +44,16 @@ button {
     background: none;
     border: 0;
     z-index: 1;
-    bottom: 15.7vh;
     position: absolute;
-    right: 0%;
     font-size: 75px;
-    padding-right: 20px;
     cursor: pointer;
+    bottom: 15.7vh;
+}
+.next {
+    right: 0%;
+    padding-right: 20px;
+}
+.previous {
+    right: 8%;
+    transform: scaleX(-1);
 }
