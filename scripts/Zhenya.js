@@ -106,26 +106,26 @@ if(act === 0) {
 
 
 // buttonNext.addEventListener('click', () => {
-//     level+=1 ;
+//     level+=1 
     
 //     if(!level) {
-//         textBox.display = 'block';
+//         textBox.display = 'block'
 //     } else if(level === 1) {
-//         nextSlide(phrasesFirstAct[level-1], '25px', persons[0], colors[0], 'none', 'display');
+//         nextSlide(phrasesFirstAct[level-1], '25px', persons[0], colors[0], 'none', 'display')
 //     } else if(level === 3) {
-//         nextSlide(phrasesFirstAct[level-1], '20px');
+//         nextSlide(phrasesFirstAct[level-1], '20px')
 //     } else if(level === 4) {
-//         nextSlide(phrasesFirstAct[level-1], '25px');
+//         nextSlide(phrasesFirstAct[level-1], '25px')
 //     } else if(level === 7) {
-//         nextSlide(phrasesFirstAct[level-1], '20px');
+//         nextSlide(phrasesFirstAct[level-1], '20px')
 //     } else if(level === 8) {
-//         nextSlide(phrasesFirstAct[level-1], '25px');
+//         nextSlide(phrasesFirstAct[level-1], '25px')
 //     } else if(level === 11) {
-//         nextSlide(phrasesFirstAct[level-1], '20px');
+//         nextSlide(phrasesFirstAct[level-1], '20px')
 //     } else if(level === 12) {
-//         nextSlide(phrasesFirstAct[level-1], '25px');
+//         nextSlide(phrasesFirstAct[level-1], '25px')
 //     } else if(level === 14) {
 //         // Finish 
 //         textBox.style.display = 'none'
 //     }
-// });
+// })
