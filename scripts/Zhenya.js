@@ -40,92 +40,101 @@ const nextSlide = (text, size, name, color, displayName, display) => {
     textBox.style.display = display
 }
 
-let act = 0
-if(act === 0) {
-    buttonNext.addEventListener('click', () => {
-        level++
-        if(level === 1) {
-            textBox.style.display = 'block'
-        } else if (level === 4) {
-            nextSlide(phrasesFirstAct[level-2], '20px')
-            i++
-        } else if (level === 8) {
-            nextSlide(phrasesFirstAct[level-2], '20px')
-            i++
-        } else if (level === 12) {
-            nextSlide(phrasesFirstAct[level-2], '20px')
-            i++
-        } else if(level === 15) {
-            textBox.style.display = 'none'
-            background.style.backgroundImage = 'url(../img/Zhenya/test.jpeg)'
-            act++
-        } else if (level === i) {
-            nextSlide(phrasesFirstAct[level-2], '25px', persons[-1], colors[-1], 'none', 'display')
-            i++
-        } else if (level === 16){
-            level--
-        }
-    })
-    buttonPrevious.addEventListener('click', () => {
-        if (level === 2 || level === 1) {
-            textBox.style.display = 'none'
-            level = 0
-            i = 2
-        } else if (level === 5) {
-            nextSlide(phrasesFirstAct[level-3], '20px')
-            i--
-            level--
-        } else if (level === 9) {
-            nextSlide(phrasesFirstAct[level-3], '20px')
-            i--
-            level--
-        } else if (level === 13) {
-            nextSlide(phrasesFirstAct[level-3], '20px')
-            i--
-            level--
-        } else if (level === 15) {
-            textBox.style.display = 'block'
-            nextSlide(phrasesFirstAct[level-3], '25px')
-            i--
-            level--
-        } else if(level === i - 1) {
-            nextSlide(phrasesFirstAct[level-3], '25px')
-            i--
-            level--
-        }
-    })
-} else if(act === 1) {
-    level = 0
-    buttonNext.addEventListener('click', () => {
-        level++
-        if(level === 1) {
-            textBox.style.display = 'block'
-        }
-    })
+const firstAct = () => {
+    if(act === 0) {
+        buttonNext.addEventListener('click', () => {
+            level++
+            if(level === 1) {
+                textBox.style.display = 'block'
+            } else if (level === 4) {
+                nextSlide(phrasesFirstAct[level-2], '20px')
+                i++
+            } else if (level === 8) {
+                nextSlide(phrasesFirstAct[level-2], '20px')
+                i++
+            } else if (level === 12) {
+                nextSlide(phrasesFirstAct[level-2], '20px')
+                i++
+            } else if(level === 15) {
+                textBox.style.display = 'none'
+                background.style.backgroundImage = 'url(../img/Zhenya/firstAct/drop.jpg)'
+                act++
+                secondAct()
+            } else if (level === i) {
+                nextSlide(phrasesFirstAct[level-2], '25px', persons[-1], colors[-1], 'none')
+                i++
+            } else if (level === 16){
+                level--
+            }
+        })
+        buttonPrevious.addEventListener('click', () => {
+            if (level === 2 || level === 1) {
+                textBox.style.display = 'none'
+                level = 0
+                i = 2
+            } else if (level === 5) {
+                nextSlide(phrasesFirstAct[level-3], '20px')
+                i--
+                level--
+            } else if (level === 9) {
+                nextSlide(phrasesFirstAct[level-3], '20px')
+                i--
+                level--
+            } else if (level === 13) {
+                nextSlide(phrasesFirstAct[level-3], '20px')
+                i--
+                level--
+            } else if (level === 15) {
+                textBox.style.display = 'block'
+                nextSlide(phrasesFirstAct[level-3], '25px')
+                i--
+                level--
+            } else if(level === i - 1) {
+                nextSlide(phrasesFirstAct[level-3], '25px')
+                i--
+                level--
+            }
+        })
+    }
+}
+const secondAct = () => {
+    if(act === 1) {
+        level = 0
+        buttonNext.addEventListener('click', () => {
+            if (level === 1) {
+                textBox.style.display = 'block'
+                nextSlide(phrasesSecondActStranger[0], '25px', persons[1], colors[0], 'block')
+            } else if (level === 2) {
+                nextSlide(phrasesSecondActStranger[1], '25px', persons[2], colors[0], 'block')
+            } else if (level === 3) {
+                nextSlide(phrasesSecondActStranger[2], '25px', persons[3], colors[0], 'block')
+            }
+        })
+    }
 }
 
-
+firstAct()
 // buttonNext.addEventListener('click', () => {
-//     level+=1 
+//     level+=1 ;
     
 //     if(!level) {
-//         textBox.display = 'block'
+//         textBox.display = 'block';
 //     } else if(level === 1) {
-//         nextSlide(phrasesFirstAct[level-1], '25px', persons[0], colors[0], 'none', 'display')
+//         nextSlide(phrasesFirstAct[level-1], '25px', persons[0], colors[0], 'none', 'display');
 //     } else if(level === 3) {
-//         nextSlide(phrasesFirstAct[level-1], '20px')
+//         nextSlide(phrasesFirstAct[level-1], '20px');
 //     } else if(level === 4) {
-//         nextSlide(phrasesFirstAct[level-1], '25px')
+//         nextSlide(phrasesFirstAct[level-1], '25px');
 //     } else if(level === 7) {
-//         nextSlide(phrasesFirstAct[level-1], '20px')
+//         nextSlide(phrasesFirstAct[level-1], '20px');
 //     } else if(level === 8) {
-//         nextSlide(phrasesFirstAct[level-1], '25px')
+//         nextSlide(phrasesFirstAct[level-1], '25px');
 //     } else if(level === 11) {
-//         nextSlide(phrasesFirstAct[level-1], '20px')
+//         nextSlide(phrasesFirstAct[level-1], '20px');
 //     } else if(level === 12) {
-//         nextSlide(phrasesFirstAct[level-1], '25px')
+//         nextSlide(phrasesFirstAct[level-1], '25px');
 //     } else if(level === 14) {
 //         // Finish 
 //         textBox.style.display = 'none'
 //     }
-// })
+// });
