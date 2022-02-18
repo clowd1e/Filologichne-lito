@@ -50,10 +50,35 @@ button {
     bottom: 15.7vh;
 }
 .next {
-    right: 0%;
-    padding-right: 20px;
+    right: 1.5%;
 }
 .previous {
     right: 8%;
     transform: scaleX(-1);
+}
+@media (max-width: 1228px) {
+    button {
+        font-size: 50px;
+    }
+}
+@media (max-width: 832px) {
+    button {
+        font-size: 40px;
+    }
+    .next {
+        right: 2%;
+    }
+    .previous {
+        right: 8%;
+    }
+}
+@media (max-width: 710px) {
+    button {
+        font-size: 25px;
+    }
+}
+@media (max-width: 444px) {
+    button {
+        font-size: 20px;
+    }
 }
