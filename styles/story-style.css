@@ -39,7 +39,7 @@ h2 {
     font-weight: 500;
     display: none;
 }
-button {
+.buttonSlide {
     color: rgb(221, 221, 0);
     background: none;
     border: 0;
@@ -56,13 +56,40 @@ button {
     right: 8%;
     transform: scaleX(-1);
 }
+.select {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+.button-Select {
+    cursor: pointer;
+    width: 400px;
+    height: 100px;
+    background: rgba(0, 0, 114, 0.466);
+    border: 0;
+    border-radius: 20px;
+    color: rgb(13, 207, 207);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 114, 0.692);
+}
+.button-Select:hover {
+    transform: scale(1.1);
+}
 @media (max-width: 1228px) {
-    button {
+    .buttonSlide {
         font-size: 50px;
     }
 }
 @media (max-width: 832px) {
-    button {
+    .buttonSlide {
         font-size: 40px;
     }
     .next {
@@ -73,12 +100,12 @@ button {
     }
 }
 @media (max-width: 710px) {
-    button {
+    .buttonSlide {
         font-size: 25px;
     }
 }
 @media (max-width: 444px) {
-    button {
+    .buttonSlide {
         font-size: 20px;
     }
 }
